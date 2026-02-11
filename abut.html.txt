@@ -10,86 +10,156 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
+/* === Root Variables === */
 :root {
-  --bg: #0B0F1A;
-  --section: #121826;
-  --card: #1A1F33;
-  --headline: #F8FAFC;
-  --muted: #94A3B8;
+  --bg: #0B0F1A;           /* Page background */
+  --section-bg: #121826;    /* Section background */
+  --card-bg: #1A1F33;       /* Card background */
+  --text-main: #F8FAFC;     /* Main text */
+  --text-muted: #94A3B8;    /* Muted text */
   --gradient: linear-gradient(90deg, #7C3AED, #EC4899, #06B6D4);
 }
 
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
-body { background: var(--bg); color: var(--headline); }
-a { text-decoration:none; color: inherit; }
-
-body { padding-top:80px; } /* space for fixed navbar */
-
-/* Navbar */
-nav {
-  position:fixed; top:0; width:100%; background: rgba(11,15,26,0.95);
-  padding:20px 40px; display:flex; justify-content:space-between; align-items:center;
-  border-bottom:1px solid rgba(255,255,255,0.1); z-index:1000;
+/* === Global Styles === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
-nav strong { font-size:24px; color: var(--headline); }
-nav a { margin-left:25px; font-weight:500; color: var(--muted); transition:0.3s; }
-nav a:hover { color: var(--headline); }
 
-/* Hero/Header */
+body {
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* === Links === */
+a {
+  text-decoration: none;
+  color: var(--text-main);
+  transition: 0.3s;
+}
+a:hover { color: #EC4899; }
+
+/* === Header / Hero Section === */
 header {
-  min-height:60vh;
-  display:flex; flex-direction:column; justify-content:center; align-items:center;
-  text-align:center; padding:0 20px;
+  padding: 40px 20px;
+  text-align: center;
+  background: var(--bg);
 }
 header h1 {
-  font-size:48px; font-weight:800;
-  background: var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  font-size: 48px;
+  font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
 }
 header p {
-  font-size:18px; color: var(--muted); margin-top:15px; line-height:1.6; max-width:700px;
+  color: var(--text-muted);
+  font-size: 18px;
 }
+
+/* === Sections === */
+.section {
+  background: var(--section-bg);
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 60px 30px;
+  box-shadow: 0 0 50px rgba(124,58,237,0.1);
+}
+
+/* Section headings */
+.section h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 40px;
+  position: relative;
+}
+.section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* === Cards / About Text === */
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  color: var(--text-main);
+  box-shadow: 0 8px 20px rgba(124,58,237,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(124,58,237,0.4);
+}
+.card p {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* === Buttons === */
 .btn {
-  display:inline-block; margin-top:20px; padding:14px 28px; background: var(--gradient);
-  border-radius:8px; color:white; font-weight:600;
-  box-shadow:0 0 20px rgba(236,72,153,0.4); transition:0.3s;
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 8px;
+  background: var(--gradient);
+  box-shadow: 0 0 20px rgba(236,72,153,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-.btn:hover { transform:translateY(-4px); box-shadow:0 0 30px rgba(236,72,153,0.6); }
-
-/* About Section */
-.about-section {
-  padding:80px 20px; max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; gap:50px; justify-content:center;
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(236,72,153,0.6);
 }
-.about-text { flex:1 1 350px; }
-.about-text h2 { font-size:32px; margin-bottom:20px; color:var(--headline); }
-.about-text p { font-size:18px; line-height:1.7; color: var(--muted); margin-bottom:20px; }
-.about-img { flex:1 1 300px; text-align:center; }
-.about-img img { width:100%; max-width:300px; border-radius:20px; box-shadow:0 0 40px rgba(124,58,237,0.4); }
 
-/* Timeline & Stats */
-.timeline-stats {
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; padding:50px 20px; max-width:1200px; margin:auto;
+/* === Social Icons === */
+.social-icons a {
+  margin-right: 15px;
+  font-size: 22px;
+  color: var(--text-muted);
+  transition: 0.3s;
 }
-.card { background: var(--card); padding:30px 20px; border-radius:12px; box-shadow:0 8px 30px rgba(124,58,237,0.15); }
-.card h3 { font-size:22px; color:#EC4899; margin-bottom:15px; }
-.card p, .card ul { color: var(--muted); line-height:1.7; }
-.card ul { list-style:none; padding-left:0; }
-.card ul li { margin-bottom:10px; }
+.social-icons a:hover { color: #EC4899; }
 
-/* Stats */
-.stats { display:flex; justify-content:space-around; flex-wrap:wrap; text-align:center; margin-top:20px; }
-.stat { margin:15px; }
-.stat h2 { font-size:28px; color:#EC4899; }
-.stat p { color:var(--muted); }
+/* === Fade Animation === */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.8s ease;
+}
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-/* Footer */
-footer { text-align:center; padding:50px 20px; color: var(--muted); font-size:14px; }
-
-/* Responsive */
-@media(max-width:900px){
-  .about-section { flex-direction:column; text-align:center; }
-  .about-text { text-align:center; }
+/* === Responsive === */
+@media (max-width: 768px) {
+  header h1 { font-size: 36px; }
+  .section h2 { font-size: 28px; }
+  .card { padding: 20px; }
+  .btn { padding: 12px 24px; font-size: 14px; }
+}
+@media (max-width: 480px) {
+  header h1 { font-size: 28px; }
+  .section h2 { font-size: 24px; }
+  .btn { padding: 10px 20px; font-size: 14px; }
 }
 </style>
+
 </head>
 
 <body>
