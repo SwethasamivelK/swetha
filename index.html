@@ -20,9 +20,22 @@
 }
 
 /* === Global Styles === */
-*{margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; scroll-behavior:smooth;}
-body{background: var(--bg); color: var(--headline);}
-a{text-decoration:none;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background: var(--bg);
+  color: var(--headline);
+}
+
+a{
+  text-decoration:none;
+}
 
 /* === Navbar === */
 nav{
@@ -37,9 +50,21 @@ nav{
   border-bottom:1px solid rgba(255,255,255,0.1);
   z-index:1000;
 }
-nav strong{color: var(--headline);}
-nav a{color: var(--muted); margin-left:25px; font-weight:500; transition:0.3s;}
-nav a:hover{color: var(--headline);}
+
+nav strong{
+  color: var(--headline);
+}
+
+nav a{
+  margin-left:25px;
+  font-weight:500;
+  color: var(--muted);
+  transition:0.3s;
+}
+
+nav a:hover{
+  color: var(--headline);
+}
 
 /* === Hero Section === */
 .hero{
@@ -51,7 +76,7 @@ nav a:hover{color: var(--headline);}
   padding:0 20px;
   background: var(--bg);
 }
-.hero-text{max-width:600px;}
+
 .hero-text h1{
   font-size:58px;
   font-weight:800;
@@ -60,6 +85,7 @@ nav a:hover{color: var(--headline);}
   -webkit-text-fill-color:transparent;
   position:relative;
 }
+
 .hero-text h1::after{
   content:"";
   display:block;
@@ -69,15 +95,17 @@ nav a:hover{color: var(--headline);}
   margin-top:12px;
   border-radius:2px;
 }
+
 .hero-text p{
   margin-top:20px;
   font-size:18px;
   color: var(--muted);
+  max-width:520px;
   margin-bottom:30px;
 }
+
 .btn{
   display:inline-block;
-  margin-top:10px;
   padding:14px 28px;
   background: var(--gradient);
   border-radius:8px;
@@ -86,14 +114,19 @@ nav a:hover{color: var(--headline);}
   box-shadow:0 0 20px rgba(236, 72, 153, 0.4);
   transition:0.3s;
 }
-.btn:hover{transform:translateY(-4px); box-shadow:0 0 30px rgba(236, 72, 153, 0.6);}
+
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 30px rgba(236, 72, 153, 0.6);
+}
+
 .hero-img img{
   width:340px;
   border-radius:20px;
   box-shadow:0 0 50px rgba(124,58,237,0.5);
 }
 
-/* === Sections === */
+/* === Section Styling === */
 .section{
   background: var(--section);
   border-radius: 15px;
@@ -103,6 +136,7 @@ nav a:hover{color: var(--headline);}
   box-shadow:0 0 50px rgba(124,58,237,0.1);
   border:1px solid rgba(124,58,237,0.15);
 }
+
 h2{
   font-size:32px;
   margin-bottom:50px;
@@ -110,6 +144,7 @@ h2{
   position:relative;
   text-align:center;
 }
+
 h2::after{
   content:"";
   display:block;
@@ -120,7 +155,7 @@ h2::after{
   margin:8px auto 0;
 }
 
-/* === Cards === */
+/* === Cards / Service Cards === */
 .card, .service-card{
   background: var(--card);
   padding:40px 30px 30px;
@@ -132,13 +167,13 @@ h2::after{
   flex-direction:column;
   justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity:0;
-  transform:translateY(30px);
 }
+
 .card:hover, .service-card:hover{
   transform:translateY(-6px);
   box-shadow:0 0 30px rgba(124,58,237,0.4);
 }
+
 .card p, .service-desc{
   color: var(--muted);
   margin-bottom:24px;
@@ -153,6 +188,7 @@ h2::after{
   position:relative;
   margin-bottom:50px;
 }
+
 .services-title::after{
   content:"";
   display:block;
@@ -162,26 +198,31 @@ h2::after{
   margin:8px auto 0;
   border-radius:2px;
 }
+
 .services-grid{
   display:grid;
   gap:40px;
   grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
 }
+
 .service-icon{
   font-size:36px;
   color:#06B6D4;
   margin-bottom:16px;
   transition: transform 0.4s ease;
 }
+
 .service-card:hover .service-icon{
   transform: rotate(15deg) scale(1.2);
 }
+
 .service-name{
   font-size:22px;
   font-weight:600;
   color:#EC4899;
   margin-bottom:12px;
 }
+
 .service-btn{
   margin-top:auto;
   align-self:center;
@@ -196,39 +237,66 @@ h2::after{
   transition: all 0.4s ease;
   animation: gradientShift 5s ease infinite;
 }
-.service-btn:hover{opacity:0.85; transform: scale(1.05);}
-@keyframes gradientShift{
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
+
+.service-btn:hover{
+  opacity:0.85;
+  transform: scale(1.05);
 }
 
-/* === Social Icons === */
+@keyframes gradientShift{
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+/* Social Icons */
 .social-icons a{
   margin-right:15px;
   font-size:20px;
   color: var(--muted);
   transition:0.3s;
 }
-.social-icons a:hover{color:#EC4899;}
 
-/* === Fade Animation === */
-.fade.show{opacity:1; transform:translateY(0); transition:0.8s ease;}
+.social-icons a:hover{
+  color:#EC4899;
+}
 
-/* === Footer === */
+/* Fade Animation */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:0.8s ease;
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Footer */
 footer{
   text-align:center;
-  padding:60px 20px;
+  padding:60px 0;
   color: var(--muted);
-  background: var(--bg);
-  border-top:1px solid #1E293B;
 }
 
 /* === Responsive === */
-@media(max-width:900px){.hero{flex-direction:column; text-align:center;}.hero-img img{margin-top:30px;}}
-@media(max-width:480px){.services-title{ font-size:28px; } .service-name{ font-size:20px; } .service-desc{ font-size:14px; } .service-btn{ padding:8px 20px; }}
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+@media(max-width:480px){
+  .services-title{ font-size:28px; }
+  .service-name{ font-size:20px; }
+  .service-desc{ font-size:14px; }
+  .service-btn{ padding:8px 20px; }
+}
 </style>
 </head>
+
 <body>
 
 <!-- Navbar -->
@@ -283,24 +351,34 @@ footer{
 <section id="services" class="section fade">
   <h2 class="services-title">Services</h2>
   <div class="services-grid">
+
     <div class="service-card fade">
       <i class="fas fa-chart-line service-icon"></i>
       <h3 class="service-name">Social Media Strategy</h3>
-      <p class="service-desc">Develop and implement content calendars, social campaigns, and audience growth strategies.</p>
+      <p class="service-desc">
+        Develop and implement content calendars, social campaigns, and audience growth strategies that drive engagement and brand visibility.
+      </p>
       <a href="#" class="service-btn">Learn More</a>
     </div>
+
     <div class="service-card fade">
       <i class="fas fa-bullhorn service-icon"></i>
       <h3 class="service-name">Content Creation</h3>
-      <p class="service-desc">Create eye-catching posts, reels, graphics, and copywriting aligned with brand voice.</p>
+      <p class="service-desc">
+        Create eye-catching posts, reels, graphics, and copywriting that align with brand voice and resonate with target audiences.
+      </p>
       <a href="#" class="service-btn">Learn More</a>
     </div>
+
     <div class="service-card fade">
       <i class="fas fa-chart-pie service-icon"></i>
       <h3 class="service-name">Analytics & Reporting</h3>
-      <p class="service-desc">Monitor KPIs, generate reports, and optimize campaigns based on performance insights.</p>
+      <p class="service-desc">
+        Monitor KPIs, generate reports, and optimize campaigns based on performance insights to maximize ROI.
+      </p>
       <a href="#" class="service-btn">Learn More</a>
     </div>
+
   </div>
 </section>
 
@@ -314,11 +392,11 @@ footer{
 </section>
 
 <!-- Footer -->
-<footer>
-  © 2026 Swetha Samivel
+<footer class="footer fade">
+  <p>© 2026 Swetha Samivel</p>
 </footer>
 
-<!-- Fade-in Script -->
+<!-- Fade In JS -->
 <script>
 const faders = document.querySelectorAll('.fade');
 const observer = new IntersectionObserver(entries=>{
