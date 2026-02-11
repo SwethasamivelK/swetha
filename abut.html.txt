@@ -1,0 +1,57 @@
+<!-- === About Me Section === -->
+<section id="about" class="section fade">
+  <h2>About Me</h2>
+
+  <!-- Bio + Photo Row -->
+  <div style="display:flex; flex-wrap:wrap; gap:40px; align-items:center; max-width:1200px; margin: auto;">
+    <div style="flex:1 1 300px; text-align:left;">
+      <p style="font-size:18px; line-height:1.7; color:var(--muted);">
+        Hi, I’m <strong>Swetha Samivel</strong>, a Social Media Manager with a passion for helping brands grow. I craft content strategies, design engaging campaigns, and analyze results to maximize ROI. I believe in building authentic connections through creative storytelling and smart strategy.
+      </p>
+      <a href="#" class="service-btn" style="margin-top:20px;">Download Resume</a>
+    </div>
+    <div style="flex:1 1 250px; text-align:center;">
+      <img src="profile.jpg" alt="Swetha" style="width:100%; max-width:300px; border-radius:20px; box-shadow:0 0 40px rgba(124,58,237,0.4);">
+    </div>
+  </div>
+
+  <!-- Timeline + Stats -->
+  <div class="services-grid" style="gap:30px; margin-top:50px; text-align:left;">
+    <!-- Timeline -->
+    <div class="service-card">
+      <h3 class="service-name">Career Timeline</h3>
+      <ul style="list-style:none; padding-left:0; color: var(--muted); line-height:1.7;">
+        <li>💼 <strong>2023 – Present:</strong> Social Media Manager (Freelance)</li>
+        <li>💻 <strong>2020 – 2023:</strong> Web Developer (Freelance)</li>
+        <li>🎨 <strong>2019 – 2020:</strong> Content Creator & Marketing Intern</li>
+      </ul>
+    </div>
+
+    <!-- Visual Stats -->
+    <div class="service-card" style="text-align:center;">
+      <h3 class="service-name">Achievements</h3>
+      <div style="display:flex; justify-content:space-around; flex-wrap:wrap; margin-top:20px;">
+        <div style="margin:15px;">
+          <h2 style="color:#EC4899; font-size:28px;">30%</h2>
+          <p style="color:var(--muted);">Engagement Increase</p>
+        </div>
+        <div style="margin:15px;">
+          <h2 style="color:#06B6D4; font-size:28px;">50%</h2>
+          <p style="color:var(--muted);">Campaign Reach Growth</p>
+        </div>
+        <div style="margin:15px;">
+          <h2 style="color:#7C3AED; font-size:28px;">100+</h2>
+          <p style="color:var(--muted);">Projects Managed</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Belief / Philosophy -->
+    <div class="service-card">
+      <h3 class="service-name">My Philosophy</h3>
+      <p class="service-desc">
+        I believe social media is more than posts and likes; it’s about creating authentic connections, telling compelling stories, and building communities that matter. Every brand has a voice, and I make sure it’s heard.
+      </p>
+    </div>
+  </div>
+</section>
