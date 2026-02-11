@@ -1,57 +1,169 @@
-<!-- === About Me Section === -->
-<section id="about" class="section fade">
-  <h2>About Me</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Swetha Samivel</title>
 
-  <!-- Bio + Photo Row -->
-  <div style="display:flex; flex-wrap:wrap; gap:40px; align-items:center; max-width:1200px; margin: auto;">
-    <div style="flex:1 1 300px; text-align:left;">
-      <p style="font-size:18px; line-height:1.7; color:var(--muted);">
-        Hi, I’m <strong>Swetha Samivel</strong>, a Social Media Manager with a passion for helping brands grow. I craft content strategies, design engaging campaigns, and analyze results to maximize ROI. I believe in building authentic connections through creative storytelling and smart strategy.
-      </p>
-      <a href="#" class="service-btn" style="margin-top:20px;">Download Resume</a>
-    </div>
-    <div style="flex:1 1 250px; text-align:center;">
-      <img src="profile.jpg" alt="Swetha" style="width:100%; max-width:300px; border-radius:20px; box-shadow:0 0 40px rgba(124,58,237,0.4);">
-    </div>
+<!-- Google Fonts & Font Awesome -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0B0F1A;
+  --section: #121826;
+  --card: #1A1F33;
+  --headline: #F8FAFC;
+  --muted: #94A3B8;
+  --gradient: linear-gradient(90deg, #7C3AED, #EC4899, #06B6D4);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+body { background: var(--bg); color: var(--headline); }
+a { text-decoration:none; color: inherit; }
+
+body { padding-top:80px; } /* space for fixed navbar */
+
+/* Navbar */
+nav {
+  position:fixed; top:0; width:100%; background: rgba(11,15,26,0.95);
+  padding:20px 40px; display:flex; justify-content:space-between; align-items:center;
+  border-bottom:1px solid rgba(255,255,255,0.1); z-index:1000;
+}
+nav strong { font-size:24px; color: var(--headline); }
+nav a { margin-left:25px; font-weight:500; color: var(--muted); transition:0.3s; }
+nav a:hover { color: var(--headline); }
+
+/* Hero/Header */
+header {
+  min-height:60vh;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; padding:0 20px;
+}
+header h1 {
+  font-size:48px; font-weight:800;
+  background: var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+header p {
+  font-size:18px; color: var(--muted); margin-top:15px; line-height:1.6; max-width:700px;
+}
+.btn {
+  display:inline-block; margin-top:20px; padding:14px 28px; background: var(--gradient);
+  border-radius:8px; color:white; font-weight:600;
+  box-shadow:0 0 20px rgba(236,72,153,0.4); transition:0.3s;
+}
+.btn:hover { transform:translateY(-4px); box-shadow:0 0 30px rgba(236,72,153,0.6); }
+
+/* About Section */
+.about-section {
+  padding:80px 20px; max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; gap:50px; justify-content:center;
+}
+.about-text { flex:1 1 350px; }
+.about-text h2 { font-size:32px; margin-bottom:20px; color:var(--headline); }
+.about-text p { font-size:18px; line-height:1.7; color: var(--muted); margin-bottom:20px; }
+.about-img { flex:1 1 300px; text-align:center; }
+.about-img img { width:100%; max-width:300px; border-radius:20px; box-shadow:0 0 40px rgba(124,58,237,0.4); }
+
+/* Timeline & Stats */
+.timeline-stats {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; padding:50px 20px; max-width:1200px; margin:auto;
+}
+.card { background: var(--card); padding:30px 20px; border-radius:12px; box-shadow:0 8px 30px rgba(124,58,237,0.15); }
+.card h3 { font-size:22px; color:#EC4899; margin-bottom:15px; }
+.card p, .card ul { color: var(--muted); line-height:1.7; }
+.card ul { list-style:none; padding-left:0; }
+.card ul li { margin-bottom:10px; }
+
+/* Stats */
+.stats { display:flex; justify-content:space-around; flex-wrap:wrap; text-align:center; margin-top:20px; }
+.stat { margin:15px; }
+.stat h2 { font-size:28px; color:#EC4899; }
+.stat p { color:var(--muted); }
+
+/* Footer */
+footer { text-align:center; padding:50px 20px; color: var(--muted); font-size:14px; }
+
+/* Responsive */
+@media(max-width:900px){
+  .about-section { flex-direction:column; text-align:center; }
+  .about-text { text-align:center; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+  <strong>Swetha</strong>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#contact">Contact</a>
   </div>
+</nav>
 
-  <!-- Timeline + Stats -->
-  <div class="services-grid" style="gap:30px; margin-top:50px; text-align:left;">
-    <!-- Timeline -->
-    <div class="service-card">
-      <h3 class="service-name">Career Timeline</h3>
-      <ul style="list-style:none; padding-left:0; color: var(--muted); line-height:1.7;">
-        <li>💼 <strong>2023 – Present:</strong> Social Media Manager (Freelance)</li>
-        <li>💻 <strong>2020 – 2023:</strong> Web Developer (Freelance)</li>
-        <li>🎨 <strong>2019 – 2020:</strong> Content Creator & Marketing Intern</li>
-      </ul>
-    </div>
+<!-- Hero/Header -->
+<header>
+  <h1>About Me</h1>
+  <p>I’m <strong>Swetha Samivel</strong>, a Social Media Manager helping brands grow with creative content, strategy, and performance-driven campaigns.</p>
+  <a href="#" class="btn">Download Resume</a>
+</header>
 
-    <!-- Visual Stats -->
-    <div class="service-card" style="text-align:center;">
-      <h3 class="service-name">Achievements</h3>
-      <div style="display:flex; justify-content:space-around; flex-wrap:wrap; margin-top:20px;">
-        <div style="margin:15px;">
-          <h2 style="color:#EC4899; font-size:28px;">30%</h2>
-          <p style="color:var(--muted);">Engagement Increase</p>
-        </div>
-        <div style="margin:15px;">
-          <h2 style="color:#06B6D4; font-size:28px;">50%</h2>
-          <p style="color:var(--muted);">Campaign Reach Growth</p>
-        </div>
-        <div style="margin:15px;">
-          <h2 style="color:#7C3AED; font-size:28px;">100+</h2>
-          <p style="color:var(--muted);">Projects Managed</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Belief / Philosophy -->
-    <div class="service-card">
-      <h3 class="service-name">My Philosophy</h3>
-      <p class="service-desc">
-        I believe social media is more than posts and likes; it’s about creating authentic connections, telling compelling stories, and building communities that matter. Every brand has a voice, and I make sure it’s heard.
-      </p>
-    </div>
+<!-- About Section -->
+<section class="about-section">
+  <div class="about-text">
+    <h2>My Story</h2>
+    <p>Hi! I’m Swetha Samivel, a Social Media Manager with 2+ years of experience increasing engagement and expanding brand reach. I specialize in content strategy, social campaigns, and community growth.</p>
+    <p>My approach combines creativity and analytics, ensuring every campaign delivers results while telling an authentic brand story.</p>
+    <a href="#" class="btn">View My Resume</a>
+  </div>
+  <div class="about-img">
+    <img src="profile.jpg" alt="Swetha Samivel">
   </div>
 </section>
+
+<!-- Timeline & Stats -->
+<section class="timeline-stats">
+  <div class="card">
+    <h3>Career Timeline</h3>
+    <ul>
+      <li>💼 <strong>2023 – Present:</strong> Social Media Manager (Freelance)</li>
+      <li>💻 <strong>2020 – 2023:</strong> Web Developer (Freelance)</li>
+      <li>🎨 <strong>2019 – 2020:</strong> Marketing Intern / Content Creator</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Achievements</h3>
+    <div class="stats">
+      <div class="stat">
+        <h2>30%</h2>
+        <p>Engagement Increase</p>
+      </div>
+      <div class="stat">
+        <h2>50%</h2>
+        <p>Campaign Reach Growth</p>
+      </div>
+      <div class="stat">
+        <h2>100+</h2>
+        <p>Projects Managed</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>My Philosophy</h3>
+    <p>Social media is more than posts and likes; it’s about creating authentic connections, telling compelling stories, and building communities that matter.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2026 Swetha Samivel
+</footer>
+
+</body>
+</html>
