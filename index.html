@@ -31,88 +31,9 @@ nav{
   display:flex; justify-content:space-between; align-items:center;
   border-bottom:1px solid rgba(255,255,255,0.1); z-index:1000;
 }
-nav strong{ color: var(--headline); font-size: 20px; }
+nav strong{ color: var(--headline); }
 nav a{ color: var(--muted); margin-left:20px; font-weight:500; transition:0.3s; }
 nav a:hover{ color: var(--headline); }
-
-/* === Hero Section === */
-.hero {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
-  padding: 100px 20px 40px;
-  flex-wrap: wrap;
-}
-
-.hero-text {
-  flex: 1 1 400px;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
-}
-
-.hero-text h1 {
-  font-size: 50px;
-  font-weight: 800;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1.1;
-  margin-bottom: 15px;
-}
-
-.hero-text p {
-  font-size: 16px;
-  color: var(--muted);
-  margin-bottom: 25px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: var(--gradient);
-  border-radius: 8px;
-  color: white;
-  font-weight: 600;
-  box-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
-  transition: 0.3s;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 25px rgba(236, 72, 153, 0.6);
-}
-
-.hero-img {
-  flex: 1 1 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.hero-img img {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 20px;
-  box-shadow: 0 0 40px rgba(124, 58, 237, 0.5);
-}
-
-.hero .social-icons a {
-  margin-right: 15px;
-  font-size: 20px;
-  color: var(--muted);
-  transition: 0.3s;
-}
-
-.hero .social-icons a:hover {
-  color: #EC4899;
-  transform: scale(1.1);
-}
 
 /* === Sections === */
 .section{
@@ -127,11 +48,11 @@ h2::after{
   content:""; display:block; width:50px; height:3px; background: var(--gradient); border-radius:2px; margin:8px auto 0;
 }
 
-/* === Cards / Services === */
+/* === Card Styles === */
 .card, .service-card{
   background: var(--card); padding:20px; border-radius:12px; margin-bottom:20px;
   border:1px solid rgba(124,58,237,0.15); box-shadow:0 5px 20px rgba(124,58,237,0.1);
-  display:flex; flex-direction:column; justify-content: space-between; transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display:flex; flex-direction:column; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover, .service-card:hover{ transform:translateY(-4px); box-shadow:0 0 20px rgba(124,58,237,0.3); }
 .card p, .service-desc{ color: var(--muted); margin-bottom:15px; line-height:1.5; }
@@ -150,6 +71,17 @@ h2::after{
 .service-btn:hover{ opacity:0.85; transform:scale(1.05); }
 @keyframes gradientShift{ 0%{background-position:0% 50%;} 50%{background-position:100% 50%;} 100%{background-position:0% 50%;} }
 
+/* === Buttons === */
+.btn{
+  display:inline-block; padding:12px 24px; background: var(--gradient); border-radius:8px; color:white;
+  font-weight:600; box-shadow:0 0 15px rgba(236,72,153,0.4); transition:0.3s;
+}
+.btn:hover{ transform:translateY(-3px); box-shadow:0 0 25px rgba(236,72,153,0.6); }
+
+/* === Social Icons === */
+.social-icons a{ margin-right:12px; font-size:18px; color: var(--muted); transition:0.3s; }
+.social-icons a:hover{ color:#EC4899; }
+
 /* === Footer Section === */
 footer{
   background: var(--section); padding:30px 20px; text-align:center; color: var(--muted);
@@ -163,21 +95,12 @@ footer{
 .fade.show{ opacity:1; transform: translateY(0); }
 
 /* === Responsive === */
-@media(max-width:900px){
-  .hero{ flex-direction: column; text-align: center; gap: 40px; padding-top: 80px; }
-  .hero-text{text-align:center;}
-  .hero-img{margin-top:0;}
-}
 @media(max-width:480px){
-  .hero-text h1{ font-size:36px; }
-  .hero-text p{ font-size:14px; }
-  .btn{ padding:8px 18px; font-size:14px; }
-  .hero-img img{ max-width:250px; }
-  .hero .social-icons a{ font-size:18px; }
   h2{ font-size:24px; }
   .service-name{ font-size:18px; }
   .service-desc{ font-size:13px; }
   .service-btn{ padding:6px 18px; font-size:13px; }
+  .btn{ padding:8px 18px; font-size:14px; }
 }
 </style>
 </head>
@@ -196,19 +119,19 @@ footer{
 </nav>
 
 <!-- === Hero Section === -->
-<section class="hero">
-  <div class="hero-text">
-    <h1>Swetha Samivel</h1>
-    <p>Social Media Manager helping brands grow through strategy, creative content, and performance-driven campaigns.</p>
-    <a href="#" class="btn">Download Resume</a>
-    <div class="social-icons" style="margin-top:20px;">
+<section id="hero" class="section fade">
+  <h2>Hi, I'm Swetha Samivel</h2>
+  <div class="card" style="text-align:center;">
+    <img src="profile.jpg" alt="Swetha" style="width:150px; border-radius:50%; margin-bottom:20px; box-shadow:0 0 30px rgba(124,58,237,0.4);">
+    <p style="font-size:16px; color:#94A3B8; margin-bottom:20px;">
+      Social Media Manager helping brands grow through strategy, creative content, and performance-driven campaigns.
+    </p>
+    <a href="#" class="btn" style="margin-bottom:15px;">Download Resume</a>
+    <div class="social-icons" style="margin-top:15px;">
       <a href="https://www.linkedin.com/in/swetha-samivel" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="mailto:s.swethasamivel@gmail.com"><i class="fas fa-envelope"></i></a>
       <a href="https://www.instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
-  </div>
-  <div class="hero-img">
-    <img src="profile.jpg" alt="Swetha">
   </div>
 </section>
 
@@ -271,7 +194,7 @@ footer{
     <p>Mobile: 8248595771</p>
     <p>Email: s.swethasamivel@gmail.com</p>
     <p>Location: Chennai</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/swetha-samivel" target="_blank" style="color:#EC4899;">linkedin.com/in/swetha-samivel</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/swetha-samivel" target="_blank">linkedin.com/in/swetha-samivel</a></p>
   </div>
 </section>
 
