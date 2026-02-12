@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Swetha Samivel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0B0F1A;
+  --glass:rgba(255,255,255,0.05);
+  --text:#F8FAFC;
+  --muted:#94A3B8;
+  --gradient:linear-gradient(90deg,#7C3AED,#EC4899,#06B6D4);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:var(--bg);color:var(--text);}
+html{scroll-behavior:smooth;}
+
+/* NAVBAR */
+nav{
+  position:sticky;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 8%;
+  background:rgba(11,15,26,0.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+nav strong{
+  font-size:20px;
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+nav a{
+  margin-left:25px;
+  text-decoration:none;
+  color:var(--text);
+  transition:0.3s;
+}
+nav a:hover{color:#EC4899;}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:100px 20px 50px;
+}
+.hero h1{
+  font-size:48px;
+  font-weight:800;
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.hero p{
+  margin-top:15px;
+  color:var(--muted);
+}
+
+/* SECTION */
+.section{
+  max-width:1100px;
+  margin:50px auto;
+  padding:50px;
+  background:var(--glass);
+  backdrop-filter:blur(15px);
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+/* GRID */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:40px;
+}
+
+/* CONTACT CARDS */
+.contact-card{
+  background:rgba(255,255,255,0.04);
+  padding:25px;
+  border-radius:16px;
+  text-align:center;
+  transition:0.3s;
+}
+.contact-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 10px 30px rgba(124,58,237,0.4);
+}
+.contact-card i{
+  font-size:28px;
+  margin-bottom:12px;
+  color:#06B6D4;
+}
+.contact-card p{
+  color:var(--muted);
+}
+
+/* FORM */
+form{
+  display:flex;
+  flex-direction:column;
+}
+input, textarea{
+  padding:14px;
+  margin-bottom:15px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+  background:rgba(255,255,255,0.08);
+  color:white;
+}
+textarea{resize:none;height:120px;}
+
+button{
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  background:var(--gradient);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+button:hover{transform:scale(1.05);}
+
+/* MAP */
+.map{
+  margin-top:40px;
+  border-radius:16px;
+  overflow:hidden;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px 20px;
+  margin-top:60px;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+.footer-social a{
+  margin:0 10px;
+  font-size:20px;
+  color:var(--muted);
+  transition:0.3s;
+}
+.footer-social a:hover{color:#EC4899;}
+
+/* WHATSAPP FLOAT */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:15px;
+  border-radius:50%;
+  font-size:22px;
+  box-shadow:0 0 20px rgba(0,0,0,0.4);
+  z-index:1000;
+  transition:0.3s;
+}
+.whatsapp:hover{transform:scale(1.1);}
+
+@media(max-width:768px){
+  .hero h1{font-size:36px;}
+  nav{flex-direction:column;gap:15px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <strong>Swetha</strong>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Contact Me</h1>
+  <p>Let’s grow your brand together 🚀</p>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section">
+  <div class="contact-grid">
+
+    <!-- Contact Info -->
+    <div>
+      <div class="contact-card">
+        <i class="fas fa-phone"></i>
+        <h3>Phone</h3>
+        <p><a href="tel:+918248595771" style="color:inherit;">+91 82485 95771</a></p>
+      </div>
+
+      <div class="contact-card" style="margin-top:20px;">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p><a href="mailto:s.swethasamivel@gmail.com" style="color:inherit;">
+        s.swethasamivel@gmail.com</a></p>
+      </div>
+
+      <div class="contact-card" style="margin-top:20px;">
+        <i class="fas fa-location-dot"></i>
+        <h3>Location</h3>
+        <p>Chennai, India</p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form action="https://formsubmit.co/s.swethasamivel@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://yourusername.github.io/contact.html">
+
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+  </div>
+
+  <!-- Google Map -->
+  <div class="map">
+    <iframe 
+      src="https://www.google.com/maps?q=Chennai&output=embed"
+      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-social">
+    <a href="https://www.linkedin.com/in/swetha-samivel" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+  <p>© 2026 Swetha Samivel. All Rights Reserved.</p>
+</footer>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/918248595771" class="whatsapp" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
