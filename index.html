@@ -110,13 +110,25 @@ footer{
 <!-- === Navbar === -->
 <nav>
   <strong>Swetha</strong>
-  <div>
+  <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="service.html">Services</a>
+
+    <!-- Services Dropdown -->
+    <div class="dropdown">
+      <a href="service.html" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
+      <div class="dropdown-content">
+        <a href="social-media-strategy.html">Social Media Strategy</a>
+        <a href="analytics-reporting.html">Analytics & Reporting</a>
+        <a href="content-creation.html">Content Creation</a>
+        <a href="community-management.html">Community Management</a>
+      </div>
+    </div>
+
     <a href="contact.html">Contact</a>
   </div>
 </nav>
+
 
 <!-- === Hero Section === -->
 <section id="hero" class="section fade">
