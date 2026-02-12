@@ -17,81 +17,89 @@
   --headline: #F8FAFC;
   --muted: #94A3B8;
   --gradient: linear-gradient(90deg, #7C3AED, #EC4899, #06B6D4);
+  --text-main: #F8FAFC;
 }
 
 /* === Global Styles === */
 *{ margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
-body{ background: var(--bg); color: var(--headline); }
-a{ text-decoration:none; }
+body{ background: var(--bg); color: var(--headline); line-height:1.6; }
+a{ text-decoration:none; color: inherit; }
 
-/* === Navbar === */
-nav{
-  position:fixed; width:100%; top:0;
-  background: rgba(11,15,26,0.85); padding:15px 40px;
-  display:flex; justify-content:space-between; align-items:center;
-  border-bottom:1px solid rgba(255,255,255,0.1); z-index:1000;
-}
-nav strong{ color: var(--headline); }
-nav a{ color: var(--muted); margin-left:20px; font-weight:500; transition:0.3s; }
-nav a:hover{ color: var(--headline); }
-
-/* Dropdown container */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown button */
-.dropbtn {
-  cursor: pointer;
-  display: inline-block;
-  margin-left: 20px;
-  color: var(--muted);
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: var(--card);
-  min-width: 220px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  border-radius: 8px;
-  z-index: 1000;
-  flex-direction: column;
-}
-
-/* Dropdown links */
-.dropdown-content a {
-  color: var(--muted);
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  transition: 0.3s;
-}
-
-.dropdown-content a:hover {
-  background: var(--section);
-  color: var(--headline);
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
+/* ===== NAVBAR ===== */
+nav {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(11,15,26,0.8);
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-/* Caret icon spacing */
-.dropbtn i {
-  margin-left: 5px;
+nav strong {
+  font-size: 20px;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+nav div a {
+  margin-left: 30px;
+  transition: 0.3s;
+  color: var(--text-main);
+}
+
+nav div a:hover {
+  color: #EC4899;
+}
+
+.dropdown { position: relative; display: inline-block; }
+.dropbtn { cursor: pointer; display: inline-block; margin-left: 20px; color: var(--muted); font-weight: 500; transition: 0.3s; }
+.dropdown-content {
+  display: none; position: absolute; background-color: var(--card);
+  min-width: 220px; box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px; z-index: 1000; flex-direction: column;
+}
+.dropdown-content a {
+  color: var(--muted); padding: 12px 16px; display: block; transition: 0.3s;
+}
+.dropdown-content a:hover { background: var(--section); color: var(--headline); }
+.dropdown:hover .dropdown-content { display: flex; }
+.dropbtn i { margin-left: 5px; }
+
+/* === Hero Section === */
+.glass-section{
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1100px;
+  gap: 40px;
+}
+.about-text{ flex:1; min-width:280px; }
+.about-text h2{ font-size:36px; margin-bottom:20px; text-align:left; }
+.about-text p{ color: var(--muted); font-size:18px; line-height:1.6; }
+.about-img{ flex:1; min-width:280px; text-align:center; }
+.about-img img{
+  width:250px; max-width:100%; border-radius:50%; border:4px solid var(--gradient);
+}
+.social-icons a{
+  margin-right:15px; font-size:24px; color: var(--muted); transition:0.3s;
+}
+.social-icons a:hover{ color:#EC4899; }
 
 /* === Sections === */
 .section{
   background: var(--section); border-radius:12px;
-  padding:50px 20px; margin:30px auto; max-width:1100px;
+  padding:50px 40px; margin:30px auto; max-width:1100px;
   box-shadow:0 0 20px rgba(124,58,237,0.1); border:1px solid rgba(124,58,237,0.15);
 }
 h2{
@@ -103,12 +111,62 @@ h2::after{
 
 /* === Card Styles === */
 .card, .service-card{
-  background: var(--card); padding:20px; border-radius:12px; margin-bottom:20px;
+  background: var(--card); padding:25px; border-radius:12px; margin-bottom:25px;
   border:1px solid rgba(124,58,237,0.15); box-shadow:0 5px 20px rgba(124,58,237,0.1);
-  display:flex; flex-direction:column; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display:flex; flex-direction:column; justify-content: flex-start; transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover, .service-card:hover{ transform:translateY(-4px); box-shadow:0 0 20px rgba(124,58,237,0.3); }
-.card p, .service-desc{ color: var(--muted); margin-bottom:15px; line-height:1.5; }
+.card p, .service-desc{ color: var(--muted); margin-bottom:15px; line-height:1.6; }
+
+/* === Professional List Styles === */
+.professional-list {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+.professional-list li {
+  position: relative;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  font-size: 16px;
+  line-height:1.6;
+  color: var(--muted);
+}
+
+/* Custom bullet */
+.professional-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gradient);
+}
+
+/* === Timeline for Experience === */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 2px;
+  height: 100%;
+  background: var(--gradient);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 25px;
+  padding-left: 20px;
+}
+.timeline-item h3 { margin-bottom:5px; color:#EC4899; }
+.timeline-item p.date { font-size:14px; color:var(--muted); margin-bottom:10px; }
 
 /* === Services Section === */
 .services-title{ font-size:28px; font-weight:700; color: var(--headline); margin-bottom:35px; }
@@ -131,29 +189,33 @@ h2::after{
 }
 .btn:hover{ transform:translateY(-3px); box-shadow:0 0 25px rgba(236,72,153,0.6); }
 
-/* === Social Icons === */
-.social-icons a{ margin-right:12px; font-size:18px; color: var(--muted); transition:0.3s; }
-.social-icons a:hover{ color:#EC4899; }
-
-/* === Footer Section === */
-footer{
-  background: var(--section); padding:30px 20px; text-align:center; color: var(--muted);
-  border-radius:12px; max-width:1100px; margin:30px auto 20px; box-shadow:0 0 20px rgba(124,58,237,0.1);
+/* === Footer === */
+footer {
+  text-align: center; padding: 50px 20px; margin-top: 60px;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
-.footer-social a{ margin:0 10px; font-size:20px; color: var(--muted); transition: all 0.3s ease; }
-.footer-social a:hover{ color: transparent; background: var(--gradient); -webkit-background-clip:text; transform:scale(1.2) rotate(-3deg); }
+.footer-social { margin-bottom: 20px; }
+.footer-social a {
+  margin: 0 12px; font-size: 22px; color: var(--muted); transition: 0.3s;
+}
+.footer-social a:hover { color: #EC4899; }
 
 /* === Fade Animation === */
-.fade{ opacity:0; transform: translateY(20px); transition:0.6s ease; }
-.fade.show{ opacity:1; transform: translateY(0); }
+.fade { opacity:0; transform: translateY(20px); transition: all 0.8s ease; }
+.show { opacity:1; transform: translateY(0); }
 
 /* === Responsive === */
+@media(max-width:768px){
+  .about-container{ flex-direction: column; text-align:center; }
+  .about-text h2{ font-size:28px; }
+}
 @media(max-width:480px){
   h2{ font-size:24px; }
   .service-name{ font-size:18px; }
   .service-desc{ font-size:13px; }
   .service-btn{ padding:6px 18px; font-size:13px; }
   .btn{ padding:8px 18px; font-size:14px; }
+  .timeline::before { left: 8px; }
 }
 </style>
 </head>
@@ -166,10 +228,9 @@ footer{
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-
-    <!-- Services Dropdown -->
+    <a href="Project.html">Projects</a>
     <div class="dropdown">
-      <a href="service.html" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
+      <a href="#" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
       <div class="dropdown-content">
         <a href="social-media-strategy.html">Social Media Strategy</a>
         <a href="analytics-reporting.html">Analytics & Reporting</a>
@@ -177,25 +238,24 @@ footer{
         <a href="community-management.html">Community Management</a>
       </div>
     </div>
-
     <a href="contact.html">Contact</a>
   </div>
 </nav>
 
-
-<!-- === Hero Section === -->
-<section id="hero" class="section fade">
-  <h2>Hi, I'm Swetha Samivel</h2>
-  <div class="card" style="text-align:center;">
-    <img src="profile.jpg" alt="Swetha" style="width:150px; border-radius:50%; margin-bottom:20px; box-shadow:0 0 30px rgba(124,58,237,0.4);">
-    <p style="font-size:16px; color:#94A3B8; margin-bottom:20px;">
-      Social Media Manager helping brands grow through strategy, creative content, and performance-driven campaigns.
-    </p>
-    <a href="#" class="btn" style="margin-bottom:15px;">Download Resume</a>
-    <div class="social-icons" style="margin-top:15px;">
-      <a href="https://www.linkedin.com/in/swetha-samivel" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:s.swethasamivel@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+<!-- === Hero SECTION === -->
+<section class="glass-section fade">
+  <div class="about-container">
+    <div class="about-text">
+      <h2>Hi, I'm Swetha Samivel</h2>
+      <p>Social Media Manager helping brands grow through strategy, creative content, and performance-driven campaigns.</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/swetha-samivel" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:s.swethasamivel@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="about-img">
+      <img src="profile.jpg" alt="Swetha Samivel">
     </div>
   </div>
 </section>
@@ -204,20 +264,47 @@ footer{
 <section id="about" class="section fade">
   <h2>About Me</h2>
   <div class="card">
-    Results-driven Social Media Manager with 2+ years of experience increasing engagement by 30% and boosting campaign reach by 50%.
+    <p>I’m a results-driven Social Media Manager with 2+ years of freelance experience managing multiple B2C and service-based brands. I specialize in building strategic content plans, running high-performing paid ad campaigns, and analyzing performance data to optimize growth.</p>
+    <p>My approach combines creativity with analytics — ensuring every post, reel, and campaign is aligned with business goals and delivers measurable results.</p>
+    <p>I focus on:</p>
+    <ul class="professional-list">
+      <li>Strategic content planning</li>
+      <li>Paid advertising & campaign optimization</li>
+      <li>Performance analytics & reporting</li>
+      <li>Brand growth & audience engagement</li>
+    </ul>
   </div>
 </section>
 
 <!-- === Experience Section === -->
 <section id="experience" class="section fade">
-  <h2>Experience</h2>
-  <div class="card">
-    <h3>Social Media Manager (Freelance)</h3>
-    <p>2023 – Present</p>
-  </div>
-  <div class="card">
-    <h3>Web Developer (Freelance)</h3>
-    <p>2020 – 2023</p>
+  <h2>Professional Experience</h2>
+  <div class="timeline">
+
+    <div class="timeline-item card">
+      <h3>Social Media Manager | Freelance</h3>
+      <p class="date">Nov 2023 – Present | Chennai</p>
+      <ul class="professional-list">
+        <li>Managed social media accounts across B2C and service industries.</li>
+        <li>Planned and executed content strategies aligned with brand goals.</li>
+        <li>Increased engagement rates by 30% through performance-focused content.</li>
+        <li>Boosted campaign reach and visibility by up to 50% using paid advertising.</li>
+        <li>Monitored insights and analytics to continuously optimize strategy.</li>
+        <li>Edited short-form video content to improve audience retention.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item card">
+      <h3>Web Developer | Freelance</h3>
+      <p class="date">Nov 2020 – May 2023 | Chennai</p>
+      <ul class="professional-list">
+        <li>Developed 3 responsive websites using HTML & CSS.</li>
+        <li>Designed digital creatives aligned with brand messaging.</li>
+        <li>Managed multiple social accounts, increasing engagement by 25%.</li>
+        <li>Delivered monthly performance reports with actionable insights.</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
@@ -229,25 +316,25 @@ footer{
       <i class="fas fa-chart-line service-icon"></i>
       <h3 class="service-name">Social Media Strategy</h3>
       <p class="service-desc">Develop and implement content calendars, social campaigns, and audience growth strategies.</p>
-      <a href="#" class="service-btn">Learn More</a>
+      <a href="social-media-strategy.html" class="service-btn">Learn More</a>
     </div>
     <div class="service-card">
       <i class="fas fa-bullhorn service-icon"></i>
       <h3 class="service-name">Content Creation</h3>
       <p class="service-desc">Create eye-catching posts, reels, graphics, and copywriting aligned with brand voice.</p>
-      <a href="#" class="service-btn">Learn More</a>
+      <a href="content-creation.html" class="service-btn">Learn More</a>
     </div>
     <div class="service-card">
       <i class="fas fa-chart-pie service-icon"></i>
       <h3 class="service-name">Analytics & Reporting</h3>
       <p class="service-desc">Monitor KPIs, generate reports, and optimize campaigns for maximum ROI.</p>
-      <a href="#" class="service-btn">Learn More</a>
+      <a href="analytics-reporting.html" class="service-btn">Learn More</a>
     </div>
     <div class="service-card">
       <i class="fas fa-users service-icon"></i>
       <h3 class="service-name">Community Management</h3>
       <p class="service-desc">Engage with audiences, respond to messages, and manage feedback.</p>
-      <a href="#" class="service-btn">Learn More</a>
+      <a href="community-management.html" class="service-btn">Learn More</a>
     </div>
   </div>
 </section>

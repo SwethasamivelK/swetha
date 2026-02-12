@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics & Reporting | Swetha Samivel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+/* ===== ROOT ===== */
+:root {
+  --bg: #0B0F1A;
+  --glass: rgba(255,255,255,0.05);
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --gradient: linear-gradient(90deg, #7C3AED, #EC4899, #06B6D4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(11,15,26,0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+nav strong {
+  font-size: 20px;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav div a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: 0.3s;
+}
+
+nav div a:hover {
+  color: #EC4899;
+}
+
+/* Dropdown container */
+.dropdown { position: relative; display: inline-block; }
+.dropbtn { cursor: pointer; display: inline-block; margin-left: 20px; color: var(--muted); font-weight: 500; transition: 0.3s; }
+.dropdown-content {
+  display: none; position: absolute; background-color: var(--card);
+  min-width: 220px; box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px; z-index: 1000; flex-direction: column;
+}
+.dropdown-content a {
+  color: var(--muted); padding: 12px 16px; display: block; transition: 0.3s;
+}
+.dropdown-content a:hover { background: var(--section); color: var(--headline); }
+.dropdown:hover .dropdown-content { display: flex; }
+.dropbtn i { margin-left: 5px; }
+
+
+/* ===== SECTION ===== */
+.section{
+  max-width:900px;
+  margin:50px auto;
+  background:#121826;
+  padding:40px;
+  border-radius:12px;
+  box-shadow:0 0 20px rgba(124,58,237,0.1);
+}
+
+h1{
+  font-size:32px;
+  background: var(--gradient);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:20px;
+}
+
+p{
+  color: var(--text-muted);
+  line-height:1.6;
+  margin-bottom:15px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 24px;
+  margin-top:20px;
+  background: var(--gradient);
+  color:#fff;
+  border-radius:8px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(124,58,237,0.3);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 50px 20px;
+  margin-top: 60px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-social {
+  margin-bottom: 20px;
+}
+
+.footer-social a {
+  margin: 0 12px;
+  font-size: 22px;
+  color: var(--text-muted);
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #EC4899;
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 900px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  header h1 {
+    font-size: 36px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <strong>Swetha</strong>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="Project.html">Projects</a>
+    <!-- Services Dropdown -->
+    <div class="dropdown">
+      <a href="" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
+      <div class="dropdown-content">
+        <a href="social-media-strategy.html">Social Media Strategy</a>
+        <a href="analytics-reporting.html">Analytics & Reporting</a>
+        <a href="content-creation.html">Content Creation</a>
+        <a href="community-management.html">Community Management</a>
+      </div>
+    </div>
+
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- MAIN SECTION -->
+<section class="section fade">
+  <h1>Analytics & Reporting</h1>
+  <p>Data-driven decisions are the key to successful social media marketing. I track engagement, reach, conversions, and other KPIs to optimize every campaign.</p>
+  <p>Through detailed reports, you’ll get a clear understanding of what’s working, what needs improvement, and actionable insights to grow your audience.</p>
+  <p>My approach ensures that your social media efforts deliver measurable ROI and help your brand stay ahead in a competitive digital landscape.</p>
+  <a href="index.html" class="btn">Back to Services</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-social">
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+  <p>© 2026 Swetha Samivel. All Rights Reserved.</p>
+</footer>
+
+
+
+</body>
+</html>
