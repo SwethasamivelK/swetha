@@ -35,6 +35,59 @@ nav strong{ color: var(--headline); }
 nav a{ color: var(--muted); margin-left:20px; font-weight:500; transition:0.3s; }
 nav a:hover{ color: var(--headline); }
 
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown button */
+.dropbtn {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 20px;
+  color: var(--muted);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--card);
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  color: var(--muted);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+
+.dropdown-content a:hover {
+  background: var(--section);
+  color: var(--headline);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+/* Caret icon spacing */
+.dropbtn i {
+  margin-left: 5px;
+}
+
+
 /* === Sections === */
 .section{
   background: var(--section); border-radius:12px;
